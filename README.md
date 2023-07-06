@@ -1,3 +1,3 @@
  # Django_class
-1.To note all the class I created this page.
+1.To recollect the data's in future I made this repo
  
