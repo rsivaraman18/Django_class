@@ -1,0 +1,173 @@
+Objective : 
+
+1.Creation Of Django Project
+command: django-admin startproject passengers
+
+2.Change Directory to Project
+command: cd Budgetpredictor
+
+3.Create New Application
+command: python manage.py startapp ourmember
+
+4.Add your application in settings.py File
+Location: settings.py --> INSTALLED_APPS = [ 'APPLicationName']
+Example : settings.py --> INSTALLED_APPS = [ 'ourmember']
+
+5.Create Templates Folder & link in settings.py
+Location: Project--> Create templates Folder --> APP FOLDER --> Required HTML FILES
+link in : settings.py --> Template Location
+command: import os
+        mytemp = os.path.join(BASE_DIR,"templates")
+        TEMPLATES = [{'DIRS':mytemp}]
+    OR  TEMPLATES = [{'DIRS':"D:/visual studio Projects/Django-class2/passengers/templates"}]
+
+
+
+6.Create Static folder & link in settings.py
+Location: Project--> Create static Folder --> css & JS & images FOLDER --> Required  FILES
+mystatic = os.path.join(BASE_DIR,"static")
+STATICFILES_DIRS = [mystatic]
+
+7.Run server (To check Basic requirement are done without error)
+python manage.py runserver 
+look at: 127.0.0.1.8000s
+
+8.Prepare Html File using this
+{% block content %}
+{% endblock %}
+{% load static %}
+
+9.views.py
+
+def index(request):
+    return render(request,"ourmember/home.html")
+
+def myviews(request):
+    uname = request.POST['name'].title()
+    uage = request.POST['age']
+    umail = request.POST['mail']
+    ucontact = request.POST['contact']
+    ulocation = request.POST['location'].title()
+    cdata = {'uname':uname,'uage':uage,'umail':umail,'ucontact':ucontact,'ulocation':ulocation}
+    return render(request,"ourmember/output.html",context=cdata)
+10.urls.py
+
+from ourmember import views
+urlpatterns = [
+    path('admin/', admin.site.urls),    
+    path('', views.index),
+    path('ourview',views.myviews)
+]
+
+11.home.html
+<link rel="stylesheet" href="../../static/css/mystyle.css">
+<link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+   <div class="container">
+        
+        <div class="d-flex justify-content-center" id="title">
+            <h2>Siva's Creation</h2>
+        </div>
+        <div class="d-flex justify-content-center subject">
+            <h5>
+                <li>
+                    <ol>Once Data submitted,datas will be shown on second page</ol>
+                    <ol>In this project POST method used to POST & get Data</ol>
+                    <ol>If we use Post method in django Use CSRF protection or leads to error</ol>
+                </li>
+            </h5>
+        </div>
+        <div class="col-md-4 offset-md-4" id="shadow">
+            <form action="ourview" autocomplete="off" method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <th colspan="2" class="center1">REGISTRATION FORM</th>
+                    </tr>
+            
+                    <tr>
+                        <th>Name</th>
+                        <td><input type="text" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td><input type="number" name="age" required></td>
+                    </tr>
+                    <tr>
+                        <th>Mail</th>
+                        <td><input type="mail" name="mail" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Contact</th>
+                        <td><input type="number" name="contact" required></td>
+                    </tr>
+                    <tr>
+                        <th>Location</th>
+                        <td><input type="text" name="location" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center1">
+                            <input type="submit" class="btn btn-primary" value="Register">
+                            <input type="reset" value="Clear" class="btn btn-danger">
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+        </div>
+    </div>
+
+
+
+12.output.html
+    <div class="subject">
+        <h5>No Boostrap used only designed  using CSS </h5>
+
+    </div>
+    <div class="col-md-4 offset-md-4" id="shadow">
+        
+        <table id="noboot1">
+            <tr>
+                <th colspan="2" class="center1">NEW  USER</th>
+            </tr>
+    
+            <tr>
+                <th>Name</th>
+                <td>{{uname}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{uage}}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>{{ucontact}}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ulocation}}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{umail}}</td>
+            </tr>
+
+        </table>
+
+        
+    </div>
+
+13.
+
+
+
+
+
+
+
+
+
+
+
+ 
