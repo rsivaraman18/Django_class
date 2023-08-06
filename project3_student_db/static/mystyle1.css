@@ -1,0 +1,123 @@
+/*          Registration Page           */
+
+.table1{
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 7px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1em;
+}
+
+
+#btn1{
+    text-align: center;
+}
+
+th,td{
+    padding: 10px;
+    font-size: 1em;
+}
+
+input{
+    border-radius: 6px;
+    padding: 2px 9px 2px 9px;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.title{
+    background-color: rgb(182, 176, 167);
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+}
+#cgender{
+    width: 100%;
+    border-radius: 6px;
+    padding: 2px 9px 2px 9px;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+/************  View all pages */
+
+.table2{
+    background-color: rgb(182, 176, 167);
+    border: 2px solid black;
+    border-radius: 7px;
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+div.table2 td{
+    background-color: yellow;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+div.table2 th{
+    font-size: 1.5em;
+}
+
+
+
+/*    View one  */
+
+.container1{
+    display: flex;
+    margin-top: 50px;
+}
+
+.search{
+    margin-left:50px;
+    flex-basis: 50%;
+    
+}
+
+.table3{
+    background-color: chocolate;
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 7px;
+    flex-basis: 50%;
+    
+}
+
+/*
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+*/
+
+
+div.table3 td{
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+div.table3 th{
+    font-size: 1.5em;
+}
+
+/* ************ *****  Nav Bar*/
+
+.nav{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn3,.btn4{
+    border: 2px solid black;
+    border-radius: 7px;
+    background-color: rgb(51, 51, 226);
+    color: azure;
+    margin: 6px;
+    padding: 6px;
+    text-decoration: none;
+    margin-top: 50px;
+}
