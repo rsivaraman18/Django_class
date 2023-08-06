@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View_one</title>
+    <link rel="stylesheet" href="../../static/mystyle1.css">
+</head>
+<body>
+    <div class="title">View One</div>
+
+    <div class="nav">
+        <a href="register" class="btn3">Register Page</a>
+        <a href="view_all" class="btn4">View All Page</a>
+    </div>
+
+    <div class="container1">
+        <div class="search">
+            <form action="view_one" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter any name" required name="csearch">
+                <input type="submit" value="search" required>
+            </form>
+        </div>
+
+        <div class="table3">
+            <table>
+                <thead>
+                    <tr><th colspan="2">View Data <hr></th></tr>
+                </thead>
+                
+                {% for each in onedata  %}
+                <tbody>
+                    <tr>
+                        {{Name}}
+                    </tr>
+                    <tr>
+                        <th>S.No</th>
+                        <td>{{number}}</td>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Age</th>
+                        <td>{{each.Age}}</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>{{gender}}</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>  
+                        <td>{{address}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{email}}</td>
+                    </tr>
+                </tbody>
+                
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+    
+    
+</body>
+</html>

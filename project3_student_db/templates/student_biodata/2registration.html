@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    
+    <link rel="stylesheet" href="../../static/mystyle1.css">
+</head>
+<body>
+    <div class="title">Registration Page</div>
+    <div class="nav">
+        <a href="view_all" class="btn3">View_all Page</a>
+        <a href="view_one" class="btn4">View_one Page</a>
+    </div>
+    <div class="table1">
+        {% block content %}
+        <form action="register" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2"><i class="fa-solid fa-pen-clip"></i>Registration <hr></th>
+                        
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <th>Name :</th>
+                        <td><input type="text" name="cname" required></td>
+                    </tr>
+                    <tr>
+                        <th>Age :</th>
+                        <td><input type="number" name="cage" required></td>
+                    </tr>
+                    <tr>
+                        <th>Gender :</th>
+                        <td>
+                            <select name="cgender" id="cgender">
+                                <option value="select">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Address :</th>
+                        <td><input type="text" name="caddress" required></td>
+                    </tr>
+                    <tr>
+                        <th>Email :</th>
+                        <td><input type="mail" name="cemail" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="btn1"><input type="submit" value="Register"></td>
+                    </tr>
+                </tbody>
+        
+        
+        
+            </table>
+        
+        </form>
+        
+        {% endblock %}
+    </div>
+    
+
+
+</body>
+</html>

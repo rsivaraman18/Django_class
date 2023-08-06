@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewall</title>
+    <link rel="stylesheet" href="../../static/mystyle1.css">
+</head>
+<body>
+    <div class="title">View All</div>
+    <div class="nav">
+        <a href="register" class="btn3">Register Page</a>
+        <a href="view_one" class="btn4">View_one Page</a>
+    </div>
+    <div class="table2">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            {% for each in cdata  %}
+            <tbody>
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{each.Name}}</td>
+                    <td>{{each.Age}}</td>
+                    <td>{{each.Gender}}</td>
+                    <td>{{each.Address}}</td>
+                    <td>{{Email}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
