@@ -1,0 +1,68 @@
+/*********************** Register Page *************************/
+
+.title{
+    margin-top: 20px;
+}
+#box1{
+    margin-top: 10px;
+    background-color: bisque;
+    box-shadow: 7px 7px 4px salmon;
+    border-radius: 7px;
+    padding-top: 10px;
+}
+
+input{
+    border-radius: 5px;
+    font-weight:bolder;
+    padding-left: 8px;
+    color:rgb(6, 84, 87);
+}
+
+#btntd1{
+    text-align: center;
+    padding: 20px;
+}
+
+.tab1{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+
+select,#idob{
+    width: 100%;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding-left: 8px;
+    color:rgb(6, 84, 87);
+    
+}
+
+#igen{
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+tr{
+    line-height: 30px;
+}
+
+/******************************************************/
+/* ******** Viewall *******  */
+#nodata{
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    color: red;
+}
+
+
+/*****************************/
+/* Update Data   */
+
+#btn2{
+    margin-left: 5px;
+    padding-left: 20px;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+}
