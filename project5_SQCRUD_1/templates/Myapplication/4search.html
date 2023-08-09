@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Data</title>
+    
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+    {{viewdata.Name}}
+    {{viewdata.Gender}}
+    </div>
+
+    <div class="col-md-9">
+        <table class="table  table-bordered ">
+            <thead class="table-secondary">
+                <tr class="text-dark">
+                    <th>S.NO</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>State</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+             {% for data in viewdata %} 
+            
+                <tbody class="table-danger">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.id}}</td>
+                    <td>{{data.Name}}</td>
+                    <td>{{data.Dob}}</td>
+                    <td>{{data.Age}}</td>
+                    <td>{{data.Gender}}</td>
+                    <td>{{data.State}}</td>
+                    <td>{{data.Contact}}</td>
+                    <td>{{data.Email}}</td>
+                    <td><a href="update/{{data.id}}" class="btn btn-info">  Update </a></td>
+                    <td><a href="delete/{{data.id}}" class="btn btn-danger">Delete </a></td>
+                </tbody>
+            {% endfor %}
+        </table>
+        
+    </div>
+    
+</body>
+</html>

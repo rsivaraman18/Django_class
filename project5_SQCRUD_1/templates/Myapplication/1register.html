@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../../static/css/mystyle.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h3 class="page-header text-center text-primary">Task-1 SQLite CRUD</h3>
+        </div>
+
+        <div class="offset-md-4 col-md-4" id="box1">
+            <h4 class="page-header text-info text-center">Let's Register</h4>
+            <hr>
+            
+            <!--Django Alert Msg using Bootstrap & hidden using jquery-->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+
+
+            <div class="table1">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table class="tab1">
+                        <tbody>
+                            <tr>
+                                <th><label for="iname">Name</label></th>
+                                <td><input type="text" placeholder="Enter ur Name" name="uname" id="iname" required></td>
+                            </tr>
+                            <tr>
+                                <th><label for="idob">DOB</label></th>
+                                <td><input type="date" name="udob" id="idob"></td>
+                            </tr>
+                            
+                            <tr>
+                                <th><label for="igender">Gender</label></th>
+                                <td id='igen'>
+                                    <input type="radio" name="ugender" value="Male" id="igender" required> Male
+                                    <input type="radio" name="ugender" value="Female" id="igender" required> Female
+                                    <input type="radio" name="ugender" value="Others" id="igender" required> Others
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="istate">State</label></th>
+                                <td>
+                                    <select name="ustate" id="istate" required>
+                                        <option value="select">Select</option>
+                                        <option value="Tamil Nadu">Tamilnadu</option>
+                                        <option value="Kerla">Kerla</option>
+                                        <option value="Andhra">Andhra</option>
+                                        <option value="Karnataka">Karnataka</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label for="ucontact">Contact</label></th>
+                                <td><input type="number" name="ucontact" maxlength="10" minlength="8"></td>
+                            </tr>
+                            <tr>
+                                <th><label for="uemail">Email</label></th>
+                                <td><input type="email" name="uemail" id="uemail"></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" id="btntd1">
+                                    <input type="submit" value="Register" class="btn btn-success">
+                                    <input type="reset" value="clear" class="btn btn-danger">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    
+    
+    
+                </form>
+            </div>
+        
+        <a href="overview" class="btn btn-success btn-block">Viewall</a>    
+
+        </div>
+            
+        
+        
+    </div>
+</body>
+</html>
+
+<script src="../../static/jquery/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(4000);
+    });
+</script>
+
