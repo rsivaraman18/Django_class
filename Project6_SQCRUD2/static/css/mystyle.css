@@ -1,0 +1,81 @@
+.body1{
+    background-color: rgb(245, 45, 235);
+}
+
+
+.sptable{
+    border-collapse: separate; /* Ensure separate borders between cells */
+    border-spacing: 0 10px; /* Adjust the second value to control spacing */
+  }
+
+.table1 tr{
+    font-size: larger;
+    margin-bottom: 60px;
+    margin-bottom: 10px; 
+    display: table-row;
+}
+
+.table1 th{
+    padding-left: 5px;
+    padding-right: 8px;
+    color: brown;
+}
+
+.table1 td{
+    padding-left: 5px;
+    padding-right: 8px;
+}
+
+.table1 input,select{
+    width: 85%;
+    border-radius: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-weight:bolder;
+    padding-bottom: 3px;
+}
+
+.inf{
+    padding-left: 0px;
+}
+
+
+/*  ***********  page 2*/
+
+#d2{
+    background-color: rgb(186, 186, 247);
+    text-align: center;
+    color: red;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+
+.table2{
+    margin-top: 35px;
+}
+
+.imgsize{
+    width: 100px;
+    height: 40px;
+    background-color: aquamarine;
+}
+
+
+/*
+.table1 input,select{
+    border-radius: 7px;
+    font-weight: bolder;
+    padding-left: 8px;
+    padding-right: 6px;
+    font-size: 1em;
+    width: 90%;
+}
+.table1{
+    margin-top: 30px;
+}
+
+
+*/
+
