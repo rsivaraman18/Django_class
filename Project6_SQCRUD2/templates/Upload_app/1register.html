@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+
+    <link rel="stylesheet" href="../../static/css/mystyle.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+</head>
+<body >
+    <div class="container">
+        <h2 class="text-center text-primary">SQLite-CRUD2 </h2>
+
+
+        <div class="offset-md-4 col-md-4 " style="margin-top: 40px;">
+            <h3 class="text-center text-primary">Let's Register</h3>
+            <form action="register" method="POST" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="table1">
+                    
+                    <table class="sptable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <td><input type="text" placeholder="Candidate Name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <th>Gender</th>
+                                <td>
+                                    <select name="gender" id="gen">
+                                        <option value="Sel">Select</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Pdf</th>
+                                <td><input type="file" name="updf" id="" class="inf" accept=".pdf"></td>
+                            </tr>
+                            <tr>
+                                <th>Excel</th>
+                                <td><input type="file" name="uexcel" id="" class="inf" accept=".xlsx"></td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td><input type="file" name="uimage" id="" class="inf" accept="image/*"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center;padding: 15px 0px;">
+                                    <input type="submit" value="Let's Register" class="btn btn-success">
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

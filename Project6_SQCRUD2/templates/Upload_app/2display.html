@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="../../static/css/mystyle.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center text-primary">SQLite-CRUD2 Display </h2>
+
+        <div class="row">
+            <div class="col-md-5">
+                <!--Message Box-->
+                    
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{message.tags}}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-3">
+                <a href="register" class="btn btn-warning "><i class="fa-regular fa-user fa-fade"></i> New Register</a>
+            </div>
+        </div>
+
+        <div class="table2">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Pdf Files</th>
+                            <th>Excel Files</th>
+                            <th>Image 1</th>
+                            <th>Image 2</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    {% if viewdata %}
+                        {% for data in viewdata %}
+                            <tbody>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{data.id}}</td>
+                                <td>{{data.Cname}}</td>
+                                <td>{{data.Cgender}}</td>
+                                <td>
+                                    <a href="{{ data.Cpdf_file.url }}"   target="_blank">
+                                        <i class="fas fa-file-pdf fa-1x"></i> View    
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ data.Cexcel_file.url }}" target="_blank">
+                                        <i class="fas fa-file-excel fa-1x"></i> View  
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ data.Cimage.url }}"  target="_blank">
+                                        <i class="fas fa-file-image fa-1x"></i> View       
+                                    </a>
+                                </td>
+                                <td>
+                                    <img src="{{data.Cimage.url}}" alt="" class="imgsize" style="width: 70px;">
+                                </td>
+                                <td><a href="update/{{data.id}}" class="btn btn-info"><i class="far fa-edit fa-spin"></i> Update</a></td>
+                                <td><a href="delete/{{data.id}}" class="delete-button btn btn-danger"><i class="fa-solid fa-trash fa-fade"></i> Delete</a></td>
+                            </tbody>
+                        {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <tr id="d1">
+                                <td colspan="9" id="d2" >No Database Found</td>
+                            </tr>
+                        </tbody>
+
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script src="../../static/jquery/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(4000);
+    });
+
+
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    // Attach event listeners to each delete button
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            event.preventDefault(); // Prevent the default link behavior
+
+            const confirmDelete = confirm("Are you sure you want to delete?");
+
+            if (confirmDelete) {
+                window.location.href = button.getAttribute('href'); // Redirect to delete URL
+            }
+        });
+    });
+
+</script>
+
+</html>
