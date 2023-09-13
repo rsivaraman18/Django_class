@@ -1,7 +1,7 @@
   
 from django.contrib import admin
 from django.urls import path
-from Upload_app import views 
+from Upload_app import views  
   
 ''' Medis path kuduka itha import pandran'''
 from django.conf import settings
