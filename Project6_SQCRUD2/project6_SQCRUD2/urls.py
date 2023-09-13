@@ -13,7 +13,7 @@ urlpatterns = [
     path('',views.Lets_View,name="dis_view"),
     path('update/<int:cid>',views.Lets_update),
     path('delete/<int:cid>',views.Lets_delete),
-    
+     
 ]
 
 
