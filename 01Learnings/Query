@@ -87,7 +87,24 @@
 
 ************************************************************
 
+6.Alter Table
+  SQL
+     ADD TABLE User
+     ADD COLUMN city VARACHAR(30) NOT NULL
 
+  Django:
+         models.py Page
+         from django.db import models 
 
+         class User(models.Model): 
+          Name    = models.CharField(max_length=20) 
+          Age     = models.IntegerField() 
+          City    = models.CharField(max_length=20) 
 
+    Terminal(Again run this to add column or any change):
+         Python manage.py make migrations
+         python manage.py migrate
+
+************************************************************
+         
 
