@@ -106,5 +106,10 @@
          python manage.py migrate
 
 ************************************************************
-         
+7.commands in migrations
+         1.make migrations
+         2.migrate
+         3.show migrations  --> 
+         4.sqlmigrate    python manage.py sqlmigrate yourapp migration_name
+
 
