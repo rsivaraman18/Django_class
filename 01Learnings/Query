@@ -1,0 +1,70 @@
+1.Insert/Create 
+  SQL: INSERT INTO user (Id,Name,Age) Values (1,'siva',23)
+  Django:
+        models.py Page
+          from django.db import models 
+
+          class User(models.Model): 
+          Name    = models.CharField(max_length=20) 
+          Age     = models.IntegerField() 
+
+        Views.py
+          myobject = User(id=1,'siva',20)
+          myobject.save()
+
+
+2.Read/Retrieve
+  SQL: SELECT * FROM User WHERE id=1
+  Django:
+        models.py Page
+          from django.db import models 
+
+          class User(models.Model): 
+          Name    = models.CharField(max_length=20) 
+          Age     = models.IntegerField() 
+
+        Views.py
+          myobject = User.objects.get(id=1)
+          
+
+3.Update/Change
+  SQL: UPDATE User SET Name='lion' WHERE id=1
+  Django:
+        models.py Page
+          from django.db import models 
+
+          class User(models.Model): 
+          Name    = models.CharField(max_length=20) 
+          Age     = models.IntegerField() 
+
+        Views.py
+          myobject = User.objects.get(id=1)
+          myobject.Name = 'lion'
+          myobject.save()
+
+
+
+3.DElete
+  SQL: DELETE FROM User WHERE id=1
+  Django:
+        models.py Page
+          from django.db import models 
+
+          class User(models.Model): 
+          Name    = models.CharField(max_length=20) 
+          Age     = models.IntegerField() 
+
+        Views.py
+          myobject = User.objects.filter(id=1)
+          myobject.delete()
+
+          
+
+
+
+
+
+
+
+
+
