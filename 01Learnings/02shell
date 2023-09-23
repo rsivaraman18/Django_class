@@ -3,3 +3,25 @@ from APPNAME.models import CLASSNAME
 datas = CLASSName.objects.all()
 for data in datas:
   print(data)
+
+
+*************************************************
+1.To add Datas
+
+name = ['Ashok','Raja','Selvam','Dharshini','Jenani']
+day = ['monday','tuesday','wednesday','thursday','friday']
+seat = [10,20,30,40,50]
+
+from myapp2.models import Customer
+for i in range(0,5):
+mycust = Customer(name[i],day[i],seat[i])
+mycust.save()
+
+2.To Get Datas
+from myapp2.models import Customer
+>>> datas = Customer.objects.all()
+>>> for data in datas:
+...     print(data.name)
+...     print(data.day)
+...     print(data.seat)
+...     print()
