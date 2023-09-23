@@ -1,0 +1,5 @@
+python manage.py shell
+from APPNAME.models import CLASSNAME
+datas = CLASSName.objects.all()
+for data in datas:
+  print(data)
