@@ -1,0 +1,57 @@
+
+# contacts/views.py
+from django.shortcuts import render
+from .forms import ContactForm
+
+def add_contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data (e.g., save the contact to the database)
+            # Redirect or render a success page
+            pass
+    else:
+        form = ContactForm()
+
+    return render(request, 'add_contact.html', {'form': form})
+ *******************************************************************************
+
+# contacts/forms.py
+from django import forms
+
+class ContactForm(forms.Form):
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    phone_number = forms.CharField(max_length=20, required=False)
+
+*********************************************************************
+
+from django.contrib import admin
+
+# Register your models here.
+from .models import Customer
+admin.site.register(Customer)
+
+**********************************************************
+urls.py
+
+from django.contrib import admin
+from django.urls import path
+from myapp2 import views
+
+urlpatterns = [
+    path('admin/',admin.site.urls),
+    
+    path('contact/',views.add_contact), 
+]
+
+***********************************************************
+
+<!-- contacts/templates/add_contact.html -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Contact</button>
+</form>
