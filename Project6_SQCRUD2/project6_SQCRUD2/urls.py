@@ -15,7 +15,7 @@ urlpatterns = [
      
 ]
 
-
+ 
 
 
 # Serve media files during development
