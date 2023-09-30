@@ -1,4 +1,4 @@
-    
+     
 from django.contrib import admin
 from django.urls import path
 from Upload_app import views    
